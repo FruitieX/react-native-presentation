@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import 'prismjs';
+import 'prismjs/themes/prism.css';
+import 'prismjs/components/prism-jsx';
+
+import 'typeface-roboto';
+import 'typeface-gloria-hallelujah';
+
+import 'impress.js';
+import './Impress.css';
+import './github.css';
+
+import Intro from './Intro';
+import Components from './Components';
 
 class App extends Component {
+  componentDidMount() {
+    window.impress().init();
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id="impress">
+        <Intro />
+        <Components />
       </div>
     );
   }
