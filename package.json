@@ -1,5 +1,5 @@
 {
-  "name": "react-presentation",
+  "name": "react-native-presentation",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "react-scripts build && surge -d haaga-helia-react.surge.sh build",
+    "deploy": "react-scripts build && surge -d haaga-helia-react-native.surge.sh build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
