@@ -48,7 +48,7 @@ class Intro extends Component {
 
           <Card>
             <CardContent>
-              <h4>Lecture 1</h4>
+              <h4>Lecture 3</h4>
               <ul style={{ fontSize: 24 }}>
                 <li>Comparison to other mobile frameworks</li>
                 <li>
@@ -56,15 +56,18 @@ class Intro extends Component {
                   <b>native component abstractions</b>
                 </li>
                 <li>Common components</li>
-                <li>Handling text input</li>
+                <li>Navigation with React Navigation</li>
+                <li>Basic debugging</li>
                 <li>Coding excercise 1</li>
               </ul>
             </CardContent>
           </Card>
           <Card style={{ marginTop: 32 }}>
             <CardContent>
-              <h4>Lecture 2</h4>
+              <h4>Lecture 4</h4>
               <ul style={{ fontSize: 24 }}>
+                <li>Network requests</li>
+                <li>Handling text input</li>
                 <li>Styling</li>
                 <li>Layout and flexbox</li>
                 <li>React Native libraries</li>
@@ -100,10 +103,11 @@ class Intro extends Component {
                       Everything runs in a WebView
                     </li>
                     <li style={{ color: 'red' }}>
-                      "Native feel" at most as good as we can get with web
-                      elements
+                      "Native feel" as good as we can get with web elements
                     </li>
-                    <li style={{ color: 'red' }}>Laggy UI, animations, ...</li>
+                    <li style={{ color: 'red' }}>
+                      Laggy UI, choppy animations, ...
+                    </li>
                   </ul>
                   <li style={{ color: 'green' }}>
                     <code>+ </code>Code sharing between platforms
@@ -140,6 +144,9 @@ class Intro extends Component {
             <CardContent>
               <h4>React Native uses native components</h4>
               <ul>
+                <li>
+                  In React Native, we control native components from JavaScript
+                </li>
                 <li>This ensures better user experience</li>
                 <li>Instant feedback when touching buttons</li>
                 <li>Smooth transitions and animations</li>
@@ -239,34 +246,121 @@ class Intro extends Component {
             </CardContent>
           </Card>
         </Step>
-        <Step id="components-common" x={2300} y={2300} z={200} rotate={-2}>
+        <Step id="components-common-view" x={2300} y={2300} z={200} rotate={-2}>
           <Card>
             <CardContent>
-              <h4>Common components</h4>
+              <h4>
+                Common components:{' '}
+                <b>
+                  <code>&lt;View&gt;</code>
+                </b>
+              </h4>
               <ul>
                 <li>
+                  Similar to{' '}
                   <b>
-                    <code>&lt;View&gt;</code>
+                    <code>&lt;div&gt;</code>
                   </b>
                 </li>
-                <ul style={{ marginTop: 0, fontSize: 30 }}>
-                  <li>
-                    Similar to{' '}
-                    <b>
-                      <code>&lt;div&gt;</code>
-                    </b>
-                  </li>
 
-                  <li>Used for layout, containing other components</li>
-                </ul>
+                <li>Used for layout, containing other components</li>
               </ul>
             </CardContent>
           </Card>
         </Step>
-        <Step id="flexbox-layout" x={1500} y={2100} z={200} rotate={2}>
+        <Step
+          id="components-common-button"
+          x={2300}
+          y={3000}
+          z={200}
+          rotate={-2}
+        >
+          <Card>
+            <CardContent>
+              <h4>
+                Common components:{' '}
+                <b>
+                  <code>&lt;Button&gt;</code>
+                </b>
+              </h4>
+              <ul>
+                <li>
+                  Similar to{' '}
+                  <b>
+                    <code>&lt;button&gt;</code>
+                  </b>
+                </li>
+
+                <li>A very simple button, not much customization available</li>
+                <li>
+                  Pass a string as{' '}
+                  <b>
+                    <code>title</code>
+                  </b>{' '}
+                  and a function as{' '}
+                  <b>
+                    <code>onPress</code>
+                  </b>{' '}
+                  handler
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="components-common-text" x={2300} y={3600} z={200} rotate={-2}>
+          <Card>
+            <CardContent>
+              <h4>
+                Common components:{' '}
+                <b>
+                  <code>&lt;Text&gt;</code>
+                </b>
+              </h4>
+              <ul>
+                <li>Any plain text must be wrapped in this component</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step
+          id="components-counter-example"
+          x={2300}
+          y={4200}
+          z={200}
+          rotate={-2}
+        >
+          <Card>
+            <CardContent>
+              <div style={{ textAlign: 'center', fontSize: 32 }}>
+                Using these, let's create a counter <b>one last time</b>
+              </div>
+              <h6>(I promise!)</h6>
+              TODO: code example
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="handling-text-input" x={100} y={1100} z={200} rotate={-5}>
+          <Card>
+            <CardContent>
+              <h4>Handling text input</h4>
+              <ul>
+                <li>This is similar to React, we just didn't cover it yet</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="flexbox-layout" x={100} y={1800} z={200} rotate={-5}>
           <Card>
             <CardContent>
               <h4>Layout and flexbox</h4>
+              <ul>
+                <li>By default, React Native uses flexbox layout</li>
+                <li>Works very similar to flexbox on the web</li>
+                <li>Flex direction is set to "column" by default</li>
+                <ul style={{ marginTop: 0, fontSize: 30 }}>
+                  <li>(as phones tend to have portrait displays)</li>
+                </ul>
+              </ul>
             </CardContent>
           </Card>
         </Step>
