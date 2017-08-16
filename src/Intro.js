@@ -3,6 +3,13 @@ import React, { Component } from 'react';
 import { PrismCode } from 'react-prism';
 import Card, { CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
+import {
+  Handwriting,
+  ExerciseContainer,
+  NumberedList,
+  List,
+  Item,
+} from './Components';
 
 import Step from './Step';
 
@@ -339,7 +346,7 @@ class Intro extends Component {
                   </PrismCode>
                 </div>
                 <div style={{ padding: 16 }}>
-                  <img src={Example1} height={350} />
+                  <img src={Example1} height={300} />
                 </div>
               </div>
             </CardContent>
@@ -414,7 +421,7 @@ class Intro extends Component {
         <Step
           id="components-counter-example"
           x={2300}
-          y={4200}
+          y={4400}
           z={200}
           rotate={-2}
         >
@@ -424,7 +431,25 @@ class Intro extends Component {
                 Using these, let's create a counter <b>one last time</b>
               </div>
               <h6>(I promise!)</h6>
-              TODO: code example
+              <PrismCode component="pre" className="language-jsx">
+                {`import React from 'react';
+import { View, Button, Text } from 'react-native';
+
+class Counter extends React.Component {
+  state = { value: 0 };
+
+  increment = () => this.setState({ value: this.state.value + 1 });
+  decrement = () => this.setState({ value: this.state.value - 1 });
+
+  render = () =>
+    <View>
+      <Text>{ this.state.value }</Text>
+      <Button title="+" onPress={this.increment} />
+      <Button title="-" onPress={this.decrement} />
+    </View>;
+}
+                `}
+              </PrismCode>
             </CardContent>
           </Card>
         </Step>
@@ -462,6 +487,8 @@ class Intro extends Component {
                 <li>Views are just React components:</li>
                 <PrismCode component="pre" className="language-jsx">
                   {`import { TabNavigator } from 'react-navigation';
+import HomeScreen from './HomeScreen';
+import SettingsScreen from './SettingsScreen';
 ...
 const AppNavigator = TabNavigator({
   Home: { screen: HomeScreen },
@@ -480,12 +507,15 @@ const AppNavigator = TabNavigator({
                   are React components.
                 </div>
                 <li>
-                  Now if you render{' '}
+                  Now if you add{' '}
                   <code>
-                    <b>&lt;AppNavigator&gt;</b>
+                    <b>&lt;AppNavigator /&gt;</b>
                   </code>{' '}
-                  in your App component, you will have set up your first tab
-                  navigator!
+                  to your App component's{' '}
+                  <code>
+                    <b>render()</b>
+                  </code>{' '}
+                  method, you will have set up your first tab navigator!
                 </li>
               </ul>
             </CardContent>
@@ -495,15 +525,48 @@ const AppNavigator = TabNavigator({
           <Card>
             <CardContent>
               <h4>Basic debugging</h4>
+              <List>
+                <Item>
+                  <code>console.log()</code> and other messages are printed to
+                  your terminal when running a create-react-native-app project
+                </Item>
+                <Item />
+              </List>
             </CardContent>
           </Card>
         </Step>
-        <Step id="navigation-exercise" x={4300} y={4300} z={200} rotate={-2}>
-          <Card>
-            <CardContent>
-              <h4>Coding exercise: Navigation</h4>
-            </CardContent>
-          </Card>
+        <Step id="navigation-exercise" x={3450} y={5200} z={300} rotate={-2}>
+          <ExerciseContainer>
+            <Card>
+              <CardContent>
+                <Handwriting>Coding exercise</Handwriting>
+                <NumberedList>
+                  <Item>Create the following components:</Item>
+                  <PrismCode component="pre" className="language-jsx">
+                    {`class FirstView extends React.Component {
+  render = () =>
+    <View style={
+      { flex: 1, backgroundColor: '#ffa' }
+    } />
+}`}
+                  </PrismCode>
+                  <PrismCode component="pre" className="language-jsx">
+                    {`class SecondView extends React.Component {
+  render = () =>
+    <View style={
+      { flex: 1, backgroundColor: '#faf' }
+    } />
+}`}
+                  </PrismCode>
+                  <Item>Set up a TabNavigator with react-navigation</Item>
+                  <Item>Insert First/SecondView as TabNavigator screens</Item>
+                  <b>Extra: </b>
+                  <Item>Port your React counter code to React Native</Item>
+                  <Item>Insert the counter as a TabNavigator screen</Item>
+                </NumberedList>
+              </CardContent>
+            </Card>
+          </ExerciseContainer>
         </Step>
         <Step id="handling-text-input" x={100} y={1100} z={200} rotate={-5}>
           <Card>
