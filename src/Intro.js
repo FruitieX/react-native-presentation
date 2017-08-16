@@ -6,6 +6,18 @@ import Typography from 'material-ui/Typography';
 
 import Step from './Step';
 
+import AndroidIcon from './assets/android.png';
+import IOSIcon from './assets/ios.png';
+import CordovaIcon from './assets/cordova_bot.png';
+import IonicIcon from './assets/ionic-logo-blog.png';
+import ReactNativeIcon from './assets/react-native.png';
+import ButtonExample from './assets/buttonExample.png';
+
+import Example1 from './assets/example-1.png';
+import Example2 from './assets/example-2.png';
+import Example3 from './assets/example-3.png';
+import NavigationExample from './assets/nested-android.png';
+
 import logo from './assets/logo-react-native.svg';
 import './App.css';
 
@@ -58,7 +70,7 @@ class Intro extends Component {
                 <li>Common components</li>
                 <li>Navigation with React Navigation</li>
                 <li>Basic debugging</li>
-                <li>Coding excercise 1</li>
+                <li>Coding exercise 1</li>
               </ul>
             </CardContent>
           </Card>
@@ -71,7 +83,7 @@ class Intro extends Component {
                 <li>Styling</li>
                 <li>Layout and flexbox</li>
                 <li>React Native libraries</li>
-                <li>Coding excercise 2</li>
+                <li>Coding exercise 2</li>
               </ul>
             </CardContent>
           </Card>
@@ -79,6 +91,57 @@ class Intro extends Component {
         <Step id="comparison" x={1200} y={100} z={200} rotate={-2}>
           <Card>
             <CardContent>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 120,
+                  right: 90,
+                  transform: 'rotate(10deg)',
+                }}
+              >
+                <img width={80} src={AndroidIcon} />
+              </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 180,
+                  right: 80,
+
+                  transform: 'rotate(-14deg)',
+                }}
+              >
+                <img width={80} src={IOSIcon} />
+              </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 320,
+                  right: 70,
+
+                  transform: 'rotate(4deg)',
+                }}
+              >
+                <img width={80} src={CordovaIcon} />
+              </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 430,
+                  right: 70,
+                }}
+              >
+                <img width={70} src={IonicIcon} />
+              </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 640,
+                  right: 70,
+                  transform: 'rotate(-4deg)',
+                }}
+              >
+                <img width={130} src={ReactNativeIcon} />
+              </div>
               <h4>Comparison to other mobile frameworks</h4>
               <ul style={{ fontSize: 24 }}>
                 <li>Native code (Android, iOS)</li>
@@ -119,8 +182,8 @@ class Intro extends Component {
                 <li>React Native</li>
                 <ul style={{ listStyle: 'none', marginTop: 0 }}>
                   <li style={{ color: 'green' }}>
-                    <code>+ </code>Performance, everything* is rendered as
-                    native components!
+                    <code>+ </code>Performance, "native feel" thanks to real
+                    native components
                   </li>
                   <li style={{ color: 'green' }}>
                     <code>+ </code>Code sharing between platforms
@@ -150,11 +213,11 @@ class Intro extends Component {
                 <li>This ensures better user experience</li>
                 <li>Instant feedback when touching buttons</li>
                 <li>Smooth transitions and animations</li>
-                <li>
-                  Components also look the way they should on the platform TODO:
-                  image of Android vs iOS button
-                </li>
+                <li>Components look the way they should on each platform:</li>
               </ul>
+              <center>
+                <img src={ButtonExample} width={700} />
+              </center>
             </CardContent>
           </Card>
         </Step>
@@ -236,7 +299,7 @@ class Intro extends Component {
                       <code>&lt;Text&gt;</code>
                     </b>
                   </li>
-                  <li>etc... See all components in documentation</li>
+                  <li>etc... See all components in RN documentation</li>
                 </ul>
                 <li>
                   These in turn map to Android, iOS (and others) native
@@ -247,7 +310,7 @@ class Intro extends Component {
           </Card>
         </Step>
         <Step id="components-common-view" x={2300} y={2300} z={200} rotate={-2}>
-          <Card>
+          <Card style={{ width: 920 }}>
             <CardContent>
               <h4>
                 Common components:{' '}
@@ -255,16 +318,30 @@ class Intro extends Component {
                   <code>&lt;View&gt;</code>
                 </b>
               </h4>
-              <ul>
-                <li>
-                  Similar to{' '}
-                  <b>
-                    <code>&lt;div&gt;</code>
-                  </b>
-                </li>
+              <div style={{ display: 'flex' }}>
+                <div>
+                  <ul>
+                    <li>
+                      Similar to{' '}
+                      <b>
+                        <code>&lt;div&gt;</code>
+                      </b>
+                    </li>
 
-                <li>Used for layout, containing other components</li>
-              </ul>
+                    <li>Used for layout, containing other components</li>
+                  </ul>
+                  <PrismCode component="pre" className="language-jsx">
+                    {`<View>
+  <View style={{ height: 200, backgroundColor: '#a45' }} />
+  <View style={{ height: 200, backgroundColor: '#5a4' }} />
+  <View style={{ height: 200, backgroundColor: '#45a' }} />
+</View>`}
+                  </PrismCode>
+                </div>
+                <div style={{ padding: 16 }}>
+                  <img src={Example1} height={350} />
+                </div>
+              </div>
             </CardContent>
           </Card>
         </Step>
@@ -304,10 +381,16 @@ class Intro extends Component {
                   handler
                 </li>
               </ul>
+              <PrismCode component="pre" className="language-jsx">
+                {`<Button title="Press me!" onPress={this.handlePress} />`}
+              </PrismCode>
+              <center>
+                <img src={Example2} width={300} />
+              </center>
             </CardContent>
           </Card>
         </Step>
-        <Step id="components-common-text" x={2300} y={3600} z={200} rotate={-2}>
+        <Step id="components-common-text" x={2300} y={3700} z={200} rotate={-2}>
           <Card>
             <CardContent>
               <h4>
@@ -319,6 +402,12 @@ class Intro extends Component {
               <ul>
                 <li>Any plain text must be wrapped in this component</li>
               </ul>
+              <PrismCode component="pre" className="language-jsx">
+                {`<Text>Hello, world!</Text>`}
+              </PrismCode>
+              <center>
+                <img src={Example3} width={500} />
+              </center>
             </CardContent>
           </Card>
         </Step>
@@ -336,6 +425,83 @@ class Intro extends Component {
               </div>
               <h6>(I promise!)</h6>
               TODO: code example
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="navigation-1" x={3400} y={3500} z={200} rotate={-2}>
+          <Card>
+            <CardContent>
+              <h4>Navigation using React Navigation</h4>
+
+              <div style={{ display: 'flex' }}>
+                <ul style={{ fontSize: 28 }}>
+                  <li>Almost any app needs navigation</li>
+                  <li>A few solutions exist for React Native</li>
+                  <li>React Navigation de-facto standard (at the moment...)</li>
+                  <li>Includes support for tab/stack/drawer navigators</li>
+                  <li>Can be used on the web (React) as well</li>
+                  <li>Uses native animations for smooth transitions</li>
+                </ul>
+                <img src={NavigationExample} width={300} />
+              </div>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="navigation-2" x={3400} y={4300} z={200} rotate={-2}>
+          <Card>
+            <CardContent>
+              <h4>Setting up React Navigation</h4>
+
+              <ul style={{ fontSize: 28 }}>
+                <li>Setting up React Navigation is very simple:</li>
+                <ul style={{ marginTop: 0, fontSize: 20 }}>
+                  <li>
+                    <code>npm install --save react-navigation</code>
+                  </li>
+                </ul>
+                <li>Views are just React components:</li>
+                <PrismCode component="pre" className="language-jsx">
+                  {`import { TabNavigator } from 'react-navigation';
+...
+const AppNavigator = TabNavigator({
+  Home: { screen: HomeScreen },
+  Settings: { screen: SettingsScreen },
+  ...
+});`}
+                </PrismCode>
+                <div style={{ fontSize: 24 }}>
+                  where{' '}
+                  <b>
+                    <code>HomeScreen </code>
+                  </b>and{' '}
+                  <b>
+                    <code>SettingsScreen</code>
+                  </b>{' '}
+                  are React components.
+                </div>
+                <li>
+                  Now if you render{' '}
+                  <code>
+                    <b>&lt;AppNavigator&gt;</b>
+                  </code>{' '}
+                  in your App component, you will have set up your first tab
+                  navigator!
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="debugging" x={4300} y={3100} z={200} rotate={-2}>
+          <Card>
+            <CardContent>
+              <h4>Basic debugging</h4>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="navigation-exercise" x={4300} y={4300} z={200} rotate={-2}>
+          <Card>
+            <CardContent>
+              <h4>Coding exercise: Navigation</h4>
             </CardContent>
           </Card>
         </Step>
