@@ -74,7 +74,7 @@ class Intro extends Component {
 
           <Card>
             <CardContent>
-              <h4>Lecture 3</h4>
+              <h4>Lecture 3: Intro to React Native</h4>
               <ul style={{ fontSize: 24 }}>
                 <li>Comparison to other mobile frameworks</li>
                 <li>
@@ -90,7 +90,7 @@ class Intro extends Component {
           </Card>
           <Card style={{ marginTop: 32 }}>
             <CardContent>
-              <h4>Lecture 4</h4>
+              <h4>Lecture 4: Advanced React Native</h4>
               <ul style={{ fontSize: 24 }}>
                 <li>Network requests</li>
                 <li>Handling text input</li>
@@ -563,6 +563,10 @@ const AppNavigator = TabNavigator({
                       <code>rndebugger-open --open --port 19001</code>
                     </Item>
                   </List>
+                  <Item>
+                    Now shake the phone (or ctrl+m / cmd+d), select Enable
+                    Remote JS Debugging
+                  </Item>
                 </List>
                 <Item>
                   Quick exercise: Set up and test React Native Debugger
@@ -680,7 +684,7 @@ const AppNavigator = TabNavigator({
                 <Item>Styling</Item>
                 <Item>Layout and flexbox</Item>
                 <Item>React Native libraries</Item>
-                <Item>Coding exercise 2</Item>
+                <Item>Coding exercise</Item>
               </List>
             </CardContent>
           </Card>
@@ -941,10 +945,32 @@ class FlexBoxExample extends React.Component {
         <Step id="external-libraries" x={-1200} y={2000} z={200} rotate={-5}>
           <Card>
             <CardContent>
-              <h4>React Native libraries</h4>
+              <h4>
+                React Native libraries (complementing missing functionality)
+              </h4>
               <List>
                 <Item>Plenty of UI component libraries exist, such as: </Item>
                 <a href="https://nativebase.io/">https://nativebase.io/</a>
+                <Item>React Native Sound</Item>
+                <a href="https://github.com/zmxv/react-native-sound">
+                  https://github.com/zmxv/react-native-sound
+                </a>
+                <Item>React Native Image Picker</Item>
+                <a href="https://github.com/react-community/react-native-image-picker">
+                  https://github.com/react-community/react-native-image-picker
+                </a>
+                <Item>For more, check out: </Item>
+                <a href="https://react.parts/native">
+                  https://react.parts/native
+                </a>
+                <Item>Implementing native libraries yourself:</Item>
+                <a href="https://facebook.github.io/react-native/docs/native-modules-android.html">
+                  https://facebook.github.io/react-native/docs/native-modules-android.html
+                </a>
+                <Item>
+                  Also pretty much any JavaScript library can be included from{' '}
+                  <b>npm</b>
+                </Item>
               </List>
             </CardContent>
           </Card>
@@ -1023,7 +1049,9 @@ class FlexBoxExample extends React.Component {
                   <Small>
                     3. Call the API endpoint again whenever the TextInput field
                     changes, with the query string in the URL set to:
-                    <b>"?q=&lt;TextInput field state&gt;"</b>
+                    <div style={{ textAlign: 'center' }}>
+                      <b>?q=&lt;value&gt;</b>
+                    </div>
                   </Small>
                 </CardContent>
               </Card>
