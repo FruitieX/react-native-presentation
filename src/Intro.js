@@ -530,48 +530,138 @@ const AppNavigator = TabNavigator({
                   <code>console.log()</code> and other messages are printed to
                   your terminal when running a create-react-native-app project
                 </Item>
-                <Item />
+                <Item>
+                  For a better debugging experience, there's React Native
+                  Debugger
+                </Item>
+                <List>
+                  <Item>
+                    Comes with React Inspector & Redux developer tools
+                  </Item>
+                  <Item>
+                    Install link is under <b>Tools</b> in{' '}
+                    <b>haaga-helia.surge.sh</b>
+                  </Item>
+                  <Item>
+                    Unfortunately requires a few extra steps with
+                    create-react-native-app projects:
+                  </Item>
+                  <List>
+                    <Item>
+                      <code>npm install -g react-native-debugger-open</code>
+                    </Item>
+                    <Item>And with the debugger open:</Item>
+                    <Item>
+                      <code>rndebugger-open --open --port 19001</code>
+                    </Item>
+                  </List>
+                </List>
+                <Item>
+                  Quick exercise: Set up and test React Native Debugger
+                </Item>
               </List>
             </CardContent>
           </Card>
         </Step>
-        <Step id="navigation-exercise" x={3450} y={5200} z={300} rotate={-2}>
-          <ExerciseContainer>
-            <Card>
-              <CardContent>
-                <Handwriting>Coding exercise</Handwriting>
-                <NumberedList>
-                  <Item>Create the following components:</Item>
-                  <PrismCode component="pre" className="language-jsx">
-                    {`class FirstView extends React.Component {
+        <Step id="navigation-exercise" x={4400} y={4000} z={300} rotate={-7}>
+          <Card>
+            <CardContent>
+              <Handwriting>Coding exercise</Handwriting>
+              <NumberedList>
+                <Item>Create the following components:</Item>
+                <PrismCode component="pre" className="language-jsx">
+                  {`class FirstView extends React.Component {
   render = () =>
     <View style={
       { flex: 1, backgroundColor: '#ffa' }
     } />
 }`}
-                  </PrismCode>
-                  <PrismCode component="pre" className="language-jsx">
-                    {`class SecondView extends React.Component {
+                </PrismCode>
+                <PrismCode component="pre" className="language-jsx">
+                  {`class SecondView extends React.Component {
   render = () =>
     <View style={
       { flex: 1, backgroundColor: '#faf' }
     } />
 }`}
-                  </PrismCode>
-                  <Item>Set up a TabNavigator with react-navigation</Item>
-                  <Item>Insert First/SecondView as TabNavigator screens</Item>
-                  <b>Extra: </b>
-                  <Item>Port your React counter code to React Native</Item>
-                  <Item>Insert the counter as a TabNavigator screen</Item>
-                </NumberedList>
-              </CardContent>
-            </Card>
-          </ExerciseContainer>
+                </PrismCode>
+                <Item>
+                  Set up a <b>TabNavigator</b> with react-navigation
+                </Item>
+                <Item>
+                  Insert <b>&lt;FirstView /&gt; </b> and{' '}
+                  <b>&lt;SecondView /&gt;</b> as TabNavigator screens
+                </Item>
+                <b>Extra: </b>
+                <Item>Port your React counter code to React Native</Item>
+                <Item>Insert the counter as a TabNavigator screen</Item>
+              </NumberedList>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="extras-1" x={5400} y={4000} z={300} rotate={-40}>
+          <Card>
+            <CardContent>
+              <Handwriting>Extras</Handwriting>
+              <List>
+                <Item>
+                  <b>
+                    <code>react-native init</code>
+                  </b>
+                </Item>
+                <List>
+                  <Item>
+                    Need to install native build tools (Android Studio, Xcode)
+                  </Item>
+                  <Item>
+                    Supports any libraries, both JavaScript and ones containing
+                    native code
+                  </Item>
+                </List>
+                <Item>
+                  <b>
+                    <code>create-react-native-app</code>
+                  </b>
+                </Item>
+                <List>
+                  <Item>Expo (previously Exponent)</Item>
+                  <Item>Very easy setup</Item>
+                  <Item>Limited set of libraries</Item>
+                  <Item>
+                    Some extra API:s that stock React Native doesn't have:
+                  </Item>
+                  <Item>
+                    <a
+                      style={{ color: '#37f' }}
+                      href="https://docs.expo.io/versions/latest/sdk/index.html"
+                    >
+                      https://docs.expo.io/versions/latest/sdk/index.html
+                    </a>
+                  </Item>
+                  <Item>Project can be "ejected" later if needed</Item>
+                </List>
+                <Item>
+                  More React Native components:{' '}
+                  <List>
+                    <Item>
+                      <a
+                        style={{ color: '#37f' }}
+                        href="https://facebook.github.io/react-native/docs"
+                      >
+                        https://facebook.github.io/react-native/docs
+                      </a>
+                    </Item>
+                  </List>
+                </Item>
+              </List>
+            </CardContent>
+          </Card>
         </Step>
         <Step id="handling-text-input" x={100} y={1100} z={200} rotate={-5}>
           <Card>
             <CardContent>
               <h4>Handling text input</h4>
+              TODO
               <ul>
                 <li>This is similar to React, we just didn't cover it yet</li>
               </ul>
@@ -582,6 +672,7 @@ const AppNavigator = TabNavigator({
           <Card>
             <CardContent>
               <h4>Layout and flexbox</h4>
+              TODO
               <ul>
                 <li>By default, React Native uses flexbox layout</li>
                 <li>Works very similar to flexbox on the web</li>
