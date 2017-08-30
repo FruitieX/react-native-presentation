@@ -32,6 +32,7 @@ import NetworkExample from './assets/network-example.png';
 import ListExample from './assets/example-list.png';
 import TextExample from './assets/text-example.png';
 
+import ExpoLogo from './assets/expo.svg';
 import logo from './assets/logo-react-native.svg';
 import './App.css';
 
@@ -529,6 +530,124 @@ const AppNavigator = TabNavigator({
             </CardContent>
           </Card>
         </Step>
+        <Step id="extras-1" x={5400} y={4000} z={300} rotate={-40}>
+          <Card>
+            <CardContent>
+              <h6>
+                <code>react-native init</code> vs{' '}
+                <code>create-react-native-app</code>
+              </h6>
+              <List>
+                <Item>
+                  <b>
+                    <code>react-native init</code>
+                  </b>
+                </Item>
+                <List>
+                  <Item>
+                    Need to install native build tools (Android Studio, Xcode)
+                  </Item>
+                  <Item>
+                    Supports any libraries, both JavaScript and ones containing
+                    native code
+                  </Item>
+                </List>
+                <Item>
+                  <b>
+                    <code>create-react-native-app</code>
+                  </b>
+                </Item>
+                <List>
+                  <Item>Uses Expo (previously Exponent)</Item>
+                  <Item>Very easy setup</Item>
+                  <Item>Limited set of libraries</Item>
+                  <Item>
+                    Some extra API:s that stock React Native doesn't have:
+                  </Item>
+                  <Item>
+                    <a
+                      style={{ color: '#37f' }}
+                      href="https://docs.expo.io/versions/latest/sdk/index.html"
+                    >
+                      https://docs.expo.io/versions/latest/sdk/index.html
+                    </a>
+                  </Item>
+                  <Item>Project can be "ejected" later if needed</Item>
+                </List>
+                <Item>
+                  More React Native components:{' '}
+                  <List>
+                    <Item>
+                      <a
+                        style={{ color: '#37f' }}
+                        href="https://facebook.github.io/react-native/docs"
+                      >
+                        https://facebook.github.io/react-native/docs
+                      </a>
+                    </Item>
+                  </List>
+                </Item>
+              </List>
+            </CardContent>
+          </Card>
+        </Step>
+        <Step id="crna-setup" x={6400} y={4300} z={300} rotate={-44}>
+          <Card>
+            <CardContent>
+              <h4>We'll use create-react-native-app</h4>
+              <h6>(as long as we don't need any native code...)</h6>
+
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 170,
+                  right: 70,
+                  transform: 'rotate(-4deg)',
+                }}
+              >
+                <img width={130} src={ExpoLogo} />
+              </div>
+              <NumberedList>
+                <Item>
+                  Install the "Expo" app on your phone via App/Play store.
+                </Item>
+                <Item>Connect your phone to the same network as your PC.</Item>
+                <List>
+                  <Item>
+                    Note that Haaga-Helia WiFi blocks client to client
+                    communication, won't work
+                  </Item>
+                  <Item>
+                    Probably best to tether your phone's Internet connection
+                    over USB/WiFi
+                  </Item>
+                  <Item>Last resort: use Android/iOS emulators</Item>
+                  <Item>
+                    (I feel sorry for you if you do this on the school's
+                    computers)
+                  </Item>
+                </List>
+                <Item>
+                  <code>npm install -g create-react-native-app</code>
+                </Item>
+                <Item>
+                  <code>create-react-native-app test-app && cd test-app</code>
+                </Item>
+                <Item>
+                  <code>npm start</code>
+                </Item>
+                <Item>
+                  Follow on-screen instructions, you should see a QR code soon.
+                  If nothing happens within ~3 minutes, ask Rasmus.
+                </Item>
+              </NumberedList>
+              <h6>
+                Bonus: Download the Expo Development Environment, sometimes
+                works better: https://expo.io/tools
+              </h6>
+            </CardContent>
+          </Card>
+        </Step>
         <Step id="debugging" x={4300} y={3100} z={200} rotate={-2}>
           <Card>
             <CardContent>
@@ -608,64 +727,6 @@ const AppNavigator = TabNavigator({
                 <Item>Port your React counter code to React Native</Item>
                 <Item>Insert the counter as a TabNavigator screen</Item>
               </NumberedList>
-            </CardContent>
-          </Card>
-        </Step>
-        <Step id="extras-1" x={5400} y={4000} z={300} rotate={-40}>
-          <Card>
-            <CardContent>
-              <Handwriting>Extras</Handwriting>
-              <List>
-                <Item>
-                  <b>
-                    <code>react-native init</code>
-                  </b>
-                </Item>
-                <List>
-                  <Item>
-                    Need to install native build tools (Android Studio, Xcode)
-                  </Item>
-                  <Item>
-                    Supports any libraries, both JavaScript and ones containing
-                    native code
-                  </Item>
-                </List>
-                <Item>
-                  <b>
-                    <code>create-react-native-app</code>
-                  </b>
-                </Item>
-                <List>
-                  <Item>Expo (previously Exponent)</Item>
-                  <Item>Very easy setup</Item>
-                  <Item>Limited set of libraries</Item>
-                  <Item>
-                    Some extra API:s that stock React Native doesn't have:
-                  </Item>
-                  <Item>
-                    <a
-                      style={{ color: '#37f' }}
-                      href="https://docs.expo.io/versions/latest/sdk/index.html"
-                    >
-                      https://docs.expo.io/versions/latest/sdk/index.html
-                    </a>
-                  </Item>
-                  <Item>Project can be "ejected" later if needed</Item>
-                </List>
-                <Item>
-                  More React Native components:{' '}
-                  <List>
-                    <Item>
-                      <a
-                        style={{ color: '#37f' }}
-                        href="https://facebook.github.io/react-native/docs"
-                      >
-                        https://facebook.github.io/react-native/docs
-                      </a>
-                    </Item>
-                  </List>
-                </Item>
-              </List>
             </CardContent>
           </Card>
         </Step>
